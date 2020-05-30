@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <title>Sign Up</title>
 </head>
 <body>
-    <form method="post" th:action="@{/signUp}" th:object="${singUpForm}">
+    <form method="post" th:action="@{/signup}" th:object="${singUpForm}">
         <label for="name">Name</label>
         <input type="text" id="name" name="name">
 

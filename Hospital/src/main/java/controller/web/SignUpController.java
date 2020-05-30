@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class SignUpController {
-    @RequestMapping(value = "/signUp", method= RequestMethod.GET)
+    @RequestMapping(value = "/signup", method= RequestMethod.GET)
     public String getSignUpForm() {
         return "signUp";
     }
 
-    @RequestMapping(value = "/signUp", method= RequestMethod.POST)
+    @RequestMapping(value = "/signup", method= RequestMethod.POST)
     public String signUp(@ModelAttribute(value="signUpForm") SignUpForm signUpForm, Model model) {
         String name = signUpForm.getName();
         String surname = signUpForm.getSurname();
