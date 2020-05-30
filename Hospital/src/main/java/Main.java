@@ -1,6 +1,6 @@
 package main.java;
 
-import main.java.controllers.menus.MainMenu;
+import main.java.controller.menu.MainMenu;
 
 public class Main {
     public static void main(String[] args) {

@@ -3,15 +3,15 @@
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="main.java.tasklogs.NurseTaskLog" table="nurse_task_log">
+    <class name="main.java.tasklog.NurseTaskLog" table="nurse_task_log">
         <id name="id" column="ID_NURSE_TASK_LOG">
             <generator class="native"/>
         </id>
 
-        <many-to-one name="nurse" class="main.java.users.stuff.Nurse">
+        <many-to-one name="nurse" class="main.java.user.stuff.Nurse">
             <column name="ID_NURSE" not-null="true"/>
         </many-to-one>
-        <many-to-one name="appointment" class="main.java.components.Appointment">
+        <many-to-one name="appointment" class="main.java.component.Appointment">
             <column name="ID_APPOINTMENT" not-null="true"/>
         </many-to-one>
     </class>

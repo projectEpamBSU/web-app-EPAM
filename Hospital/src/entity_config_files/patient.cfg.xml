@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="main.java.users.Patient" table="patient">
+    <class name="main.java.user.Patient" table="patient">
         <id name="id" column="ID_PATIENT">
             <generator class="native"/>
         </id>
@@ -18,7 +18,7 @@
             <key>
                 <column name="ID_PATIENT" not-null="true"/>
             </key>
-            <one-to-many class="main.java.components.Appointment"/>
+            <one-to-many class="main.java.component.Appointment"/>
         </set>
     </class>
 </hibernate-mapping>
