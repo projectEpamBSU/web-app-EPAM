@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+</head>
+<body>
+    <form action="#" enctype="application/x-www-form-urlencoded" method="post" th:action="@{/signup}" th:object="${singUpForm}" modelAttribute="singUpForm">
+        <label for="name">Name</label>
+        <input th:attr="field = '*{name}'" type="text" name="name" id="name" />
+
+        <label for="surname">Surname</label>
+        <input th:attr="field = '*{surname}'" type="text" name="surname" id="surname" />
+
+        <label for="age">Age</label>
+        <input th:attr="field = '*{age}'" type="text" name="age" id="age" />
+
+        <label for="login">Login</label>
+        <input th:attr="field = '*{login}'" type="text" name="login" id="login" />
+
+        <label for="password">Password</label>
+        <input th:attr="field = '*{password}'" type="password" name="password" id="password" />
+
+        <input type="submit" value="Register" />
+    </form>
+</body>
+</html>
