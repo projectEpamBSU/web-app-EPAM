@@ -7,19 +7,19 @@
 <body>
     <form method="post" th:action="@{/signup}" th:object="${singUpForm}">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name">
+        <input th:field="${name}" type="text" id="name" name="name">
 
         <label for="surname">Surname</label>
-        <input type="text" id="surname" name="surname">
+        <input th:field="${surname}" type="text" id="surname" name="surname">
 
         <label for="age">Age</label>
-        <input type="text" id="age" name="age">
+        <input th:field="${age}" type="text" id="age" name="age">
 
         <label for="login">Login</label>
-        <input type="text" id="login" name="login">
+        <input th:field="${login}" type="text" id="login" name="login">
 
         <label for="password">Password</label>
-        <input type="text" id="password" name="password">
+        <input th:field="${password}" type="password" id="password" name="password">
 
         <input type="submit" value="Register">
     </form>

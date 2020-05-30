@@ -3,7 +3,7 @@ package main.java.form;
 public class SignUpForm {
     private String name;
     private String surname;
-    private int age;
+    private String age;
     private String login;
     private String password;
 
@@ -19,7 +19,7 @@ public class SignUpForm {
         return surname;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
