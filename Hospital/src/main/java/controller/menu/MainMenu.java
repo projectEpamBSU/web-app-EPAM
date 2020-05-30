@@ -1,8 +1,8 @@
 package main.java.controller.menu;
 
-import main.java.controller.menu.user_menus.DoctorMenu;
-import main.java.controller.menu.user_menus.NurseMenu;
-import main.java.controller.menu.user_menus.PatientMenu;
+import main.java.controller.menu.user_menu.DoctorMenu;
+import main.java.controller.menu.user_menu.NurseMenu;
+import main.java.controller.menu.user_menu.PatientMenu;
 import main.java.controller.resource_controller.Authorizer;
 import main.java.user.Patient;
 import main.java.user.stuff.Doctor;

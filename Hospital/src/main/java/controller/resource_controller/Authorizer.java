@@ -71,7 +71,7 @@ public class Authorizer {
         throw new Exception("You are out of attempts");
     }
 
-    public Patient signUp() {
+    /*public Patient signUp() {
         System.out.println("Name: ");
         String name = this.scanner.nextLine();
 
@@ -88,6 +88,18 @@ public class Authorizer {
         System.out.println("Your password: ");
         String password = this.scanner.nextLine();
 
+        Patient newPatient = new Patient(name, surname, age, login, password, true);
+        this.dbUpdater.addPatient(newPatient);
+
+        return newPatient;
+    }*/
+
+    public Patient signUp() {
+        System.out.println("kekw");
+        return new Patient();
+    }
+
+    public Patient signUp(String name, String surname, int age, String login, String password) {
         Patient newPatient = new Patient(name, surname, age, login, password, true);
         this.dbUpdater.addPatient(newPatient);
 

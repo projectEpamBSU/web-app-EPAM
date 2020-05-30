@@ -1,4 +1,4 @@
-package main.java.controller.menu.user_menus;
+package main.java.controller.menu.user_menu;
 
 import main.java.component.Treatment;
 import main.java.component.searcher.PatientSearcher;

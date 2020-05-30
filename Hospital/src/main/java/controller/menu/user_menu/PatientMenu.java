@@ -1,4 +1,4 @@
-package main.java.controller.menu.user_menus;
+package main.java.controller.menu.user_menu;
 
 import main.java.component.Appointment;
 import main.java.component.Treatment;
