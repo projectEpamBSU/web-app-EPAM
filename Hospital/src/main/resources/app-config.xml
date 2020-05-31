@@ -23,15 +23,22 @@
                 <prop key="/">MainController</prop>
                 <prop key="/patient">PatientController</prop>
                 <prop key="/patient_profile">PatientProfileController</prop>
+                <prop key="/doctor_profile">DoctorProfileController</prop>
+                <prop key="/nurse_profile">NurseProfileController</prop>
                 <prop key="/patient_appointments">PatientAppointmentsController</prop>
                 <prop key="/patient_treatments">PatientTreatmentsController</prop>
             </props>
         </property>
     </bean>
 
-    <mvc:redirect-view-controller path="MainController" redirect-url="index.html" />
-    <mvc:redirect-view-controller path="PatientController" redirect-url="patient.html"/>
+    <mvc:annotation-driven />
+    <mvc:default-servlet-handler/>
+
+    <mvc:redirect-view-controller path="MainController" redirect-url="index" />
+    <mvc:redirect-view-controller path="PatientController" redirect-url="patient"/>
     <mvc:redirect-view-controller path="PatientProfileController" redirect-url="patient_profile" />
     <mvc:redirect-view-controller path="PatientAppointmentsController" redirect-url="patient_appointments" />
     <mvc:redirect-view-controller path="PatientTreatmentsController" redirect-url="patient_treatments" />
+    <mvc:redirect-view-controller path="DoctorProfileController" redirect-url="doctor_profile" />
+    <mvc:redirect-view-controller path="NurseProfileController" redirect-url="nurse_profile" />
 </beans>
