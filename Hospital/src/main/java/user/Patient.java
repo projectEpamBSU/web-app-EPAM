@@ -58,6 +58,8 @@ public class Patient implements Serializable {
 
     public boolean isRecovered() { return recovered; }
 
+    public boolean getRecovered() { return recovered; }
+
     public void setId(int id) {
         this.id = id;
     }

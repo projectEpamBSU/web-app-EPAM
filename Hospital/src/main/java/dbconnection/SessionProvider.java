@@ -1,7 +1,7 @@
 package main.java.dbconnection;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 import java.io.File;
 
@@ -12,7 +12,7 @@ public class SessionProvider
     public SessionFactory buildSessionFactory()
     {
         try {
-            return new AnnotationConfiguration().configure(
+            return new Configuration().configure(
                     new File("src/hibernate.cfg.xml")).buildSessionFactory();
 
         } catch (Throwable ex) {

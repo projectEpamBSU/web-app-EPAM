@@ -8,17 +8,16 @@ import main.java.component.Appointment;
 import main.java.component.Treatment;
 
 import main.java.user.stuff.Nurse;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.hibernate.Criteria;
-import org.hibernate.Query;
+import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
+
+import java.util.ArrayList;
 
 public class DBUpdater {
     private SessionProvider sessionProvider = new SessionProvider();
     private Session session;
-    static Logger logger = LogManager.getLogger();
 
     public DBUpdater(Session session) {
         this.session = session;
@@ -51,7 +50,19 @@ public class DBUpdater {
 
     public void addPatient(Patient newPatient) {
         session.beginTransaction();
-        session.save(newPatient);
+
+        String hql = "insert into Patient(name, surname, age, login, password, recovered) select" +
+                ":name, :surname, :age, :login, :password, :recovered from Patient";
+        Query query = session.createQuery(hql);
+        query.setParameter("name", newPatient.getName());
+        query.setParameter("surname", newPatient.getSurname());
+        query.setParameter("age", newPatient.getAge());
+        query.setParameter("login", newPatient.getLogin());
+        query.setParameter("password", newPatient.getPassword());
+        query.setParameter("recovered", newPatient.getRecovered());
+        query.executeUpdate();
+
+//        session.save(newPatient);
         session.getTransaction().commit();
     }
 

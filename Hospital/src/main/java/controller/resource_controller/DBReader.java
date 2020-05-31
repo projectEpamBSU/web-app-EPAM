@@ -2,8 +2,6 @@ package main.java.controller.resource_controller;
 
 import main.java.dbconnection.SessionProvider;
 import main.java.tasklog.NurseTaskLog;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import main.java.user.Patient;
 import main.java.user.stuff.Doctor;
@@ -21,7 +19,6 @@ import java.util.stream.Collectors;
 public class DBReader {
     private SessionProvider sessionProvider = new SessionProvider();
     private Session session;
-    static Logger logger = LogManager.getLogger();
 
     public DBReader(Session session) {
         this.session = session;
