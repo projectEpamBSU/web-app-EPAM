@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
     <title>Sign Up</title>
@@ -22,6 +22,10 @@
         <input th:attr="field = '*{password}'" type="password" name="password" id="password" />
 
         <input type="submit" value="Register" />
+
+        <a th:href="@{/signin}">Have a profile?</a>
+
+        <a th:href="@{/}"><= Back</a>
     </form>
 </body>
 </html>

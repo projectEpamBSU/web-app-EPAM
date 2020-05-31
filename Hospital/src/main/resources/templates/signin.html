@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign In</title>
+</head>
+<body>
+<form action="#" enctype="application/x-www-form-urlencoded" method="post" th:action="@{/signin}" th:object="${signInForm}" modelAttribute="signInForm">
+    <label for="login">Login</label>
+    <input th:attr="field = '*{login}'" type="text" name="login" id="login" />
+
+    <label for="password">Password</label>
+    <input th:attr="field = '*{password}'" type="password" name="password" id="password" />
+
+    <input type="submit" value="Sign In" />
+
+    <a th:href="@{/signup}">Haven't a profile?</a>
+
+    <a th:href="@{/}"><= Back</a>
+</form>
+</body>
+</html>
