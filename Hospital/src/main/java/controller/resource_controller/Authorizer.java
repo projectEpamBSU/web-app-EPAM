@@ -77,6 +77,15 @@ public class Authorizer {
         throw new Exception("You are out of attempts");
     }
 
+    public Object logIn(String login, String password) throws Exception {
+        Object foundUser = this.findUserByLoginAndPassword(login, password);
+        if(!(foundUser.equals(new Object()))) {
+            return foundUser;
+        } else {
+            throw new Exception("Incorrect login or password");
+        }
+    }
+
     /*public Patient signUp() {
         System.out.println("Name: ");
         String name = this.scanner.nextLine();
