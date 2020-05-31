@@ -18,12 +18,18 @@ public class Authorizer {
     private Scanner scanner;
 
     public Authorizer() {
+        System.out.println("A");
         this.dbReader = new DBReader();
+        System.out.println("B");
         this.dbUpdater = new DBUpdater();
+        System.out.println("C");
 
         this.patients = this.dbReader.getAllPatients();
+        System.out.println("D");
         this.doctors = this.dbReader.getAllDoctors();
+        System.out.println("E");
         this.nurses = this.dbReader.getAllNurses();
+        System.out.println("F");
 
         this.scanner = new Scanner(System.in);
     }
