@@ -2,14 +2,12 @@ package main.java.controller.web;
 
 import main.java.controller.resource_controller.Authorizer;
 import main.java.form.SignInForm;
-import main.java.form.SignUpForm;
 import main.java.user.Patient;
 import main.java.user.stuff.Doctor;
 import main.java.user.stuff.Nurse;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,13 +22,13 @@ public class SignInController {
     }
 
     @GetMapping(value = "/signin")
-    public String getSignUpForm(Model model) {
-        model.addAttribute("signInForm", new SignUpForm());
+    public String getSignInForm(Model model) {
+        model.addAttribute("signInForm", new SignInForm());
         return "signin";
     }
 
     @PostMapping(value = "/signin")
-    public String signUp(@ModelAttribute(value="signInForm") SignInForm signInForm, BindingResult result, Model model, HttpSession session) {
+    public String signUp(@ModelAttribute(value="signInForm") SignInForm signInForm, Model model, HttpSession session) {
         model.addAttribute("signInForm", signInForm);
 
         System.out.println("login " + signInForm.getLogin());

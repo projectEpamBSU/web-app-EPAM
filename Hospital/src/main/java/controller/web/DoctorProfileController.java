@@ -1,6 +1,5 @@
 package main.java.controller.web;
 
-import main.java.user.Patient;
 import main.java.user.stuff.Doctor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
