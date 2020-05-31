@@ -91,7 +91,7 @@ public class Patient implements Serializable {
     }
 
     public String showProfile() {
-        return name + " " + surname + ", " + age;
+        return "Name: " + name + '\n' + "Surname: " + surname + '\n' + "Age: " + age + '\n' + "Login: " + login + '\n';
     }
 
     @Override
