@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>My appointments</title>
+</head>
+<body>
+<h1>My profile</h1>
+<ul th:if="${nurseAppointments.isEmpty}">
+    <li> No appointments Available </li>
+</ul>
+<ul th:each="appointment : ${nurseAppointments}">
+    <li>
+        <span th:text="${appointment.procedure}">no procedures</span>
+        <span th:text="${appointment.medicine}">no medicines</span>
+        <span th:text="${appointment.operation}">no operations</span>
+        <span th:text="${appointment.diagnose}">no diagnoses</span>
+    </li>
+</ul>
+<a th:href="@{/patient}"><= Back</a>
+</body>
+</html>
