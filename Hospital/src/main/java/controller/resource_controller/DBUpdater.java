@@ -9,6 +9,7 @@ import main.java.component.Treatment;
 
 import main.java.user.stuff.Nurse;
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -51,7 +52,7 @@ public class DBUpdater {
     public void addPatient(Patient newPatient) {
         session.beginTransaction();
 
-        String hql = "insert into Patient(name, surname, age, login, password, recovered) select" +
+        String hql = "insert into Patient(name, surname, age, login, password, recovered) select distinct " +
                 ":name, :surname, :age, :login, :password, :recovered from Patient";
         Query query = session.createQuery(hql);
         query.setParameter("name", newPatient.getName());
@@ -62,22 +63,38 @@ public class DBUpdater {
         query.setParameter("recovered", newPatient.getRecovered());
         query.executeUpdate();
 
-//        session.save(newPatient);
         session.getTransaction().commit();
     }
 
     public void addAppointment(Appointment newAppointment) {
         session.beginTransaction();
 
-        session.save(newAppointment);
-        session.save(new Treatment(newAppointment, "", "", "", ""));
+        String appointmentHql = "insert into Appointment (doctor, patient, appDate) select distinct " +
+                ":doctor, :patient, :appDate from Appointment";
+        Query query = session.createQuery(appointmentHql);
+        query.setParameter("doctor", newAppointment.getDoctor());
+        query.setParameter("patient", newAppointment.getPatient());
+        query.setParameter("appDate", newAppointment.getAppDate());
+        query.executeUpdate();
+
+        String treatmentHql = "insert into Treatment (procedure, medicine, operation, diagnose, appointment)" +
+                "select distinct '', '', '', '', :app from Treatment";
+        Query treatQuery = session.createQuery(treatmentHql);
+        treatQuery.setParameter("app", newAppointment);
+        treatQuery.executeUpdate();
 
         session.getTransaction().commit();
     }
 
     public void addRowToNurseTaskLog(NurseTaskLog nurseTaskLog) {
         session.beginTransaction();
-        session.save(nurseTaskLog);
+
+        String hql = "insert into NurseTaskLog (appointment, nurse) select distinct :app, :nurse from NurseTaskLog";
+        Query query = session.createQuery(hql);
+        query.setParameter("app", nurseTaskLog.getAppointment());
+        query.setParameter("nurse", nurseTaskLog.getNurse());
+        query.executeUpdate();
+
         session.getTransaction().commit();
     }
 

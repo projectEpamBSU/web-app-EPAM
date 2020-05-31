@@ -3,6 +3,7 @@ package main.java.user;
 import main.java.component.Appointment;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
 
@@ -93,7 +94,7 @@ public class Patient implements Serializable {
     }
 
     public String showProfile() {
-        return "Name: " + name + '\n' + "Surname: " + surname + '\n' + "Age: " + age + '\n' + "Login: " + login + '\n';
+        return "Name: " + name + '\n' + "Surname: " + surname + '\n' + "Age: " + age + '\n' + "Login: " + login + '\n' + password;
     }
 
     @Override

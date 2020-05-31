@@ -7,12 +7,12 @@
         <id name="id" column="ID_PATIENT">
             <generator class="native"/>
         </id>
-        <property name="name" column="FIRST_NAME" type="java.lang.String"/>
-        <property name="surname" column="SECOND_NAME" type="java.lang.String"/>
-        <property name="age" column="AGE" type="int"/>
-        <property name="login" column="LOGIN" type="java.lang.String"/>
-        <property name="password" column="PASSWORD" type="java.lang.String"/>
-        <property name="recovered" column="RECOVERED" type="boolean"/>
+        <property name="name" column="FIRST_NAME" type="java.lang.String" not-null="true"/>
+        <property name="surname" column="SECOND_NAME" type="java.lang.String" not-null="true"/>
+        <property name="age" column="AGE" type="int" not-null="true"/>
+        <property name="login" column="LOGIN" type="java.lang.String" not-null="true"/>
+        <property name="password" column="PASSWORD" type="java.lang.String" not-null="true"/>
+        <property name="recovered" column="RECOVERED" type="boolean" not-null="true"/>
 
         <set name="appointments" table="appointment" lazy="true">
             <key>

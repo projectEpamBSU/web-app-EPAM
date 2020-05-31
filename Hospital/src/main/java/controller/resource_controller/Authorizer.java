@@ -107,6 +107,7 @@ public class Authorizer {
 
     public Patient signUp(String name, String surname, int age, String login, String password) {
         Patient newPatient = new Patient(name, surname, age, login, password, true);
+
         this.dbUpdater.addPatient(newPatient);
 
         return newPatient;
