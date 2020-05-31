@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>My patients</title>
+</head>
+<body>
+<h1>My profile</h1>
+<ul th:if="${patients.isEmpty}">
+    <li> No patients </li>
+</ul>
+<ul th:each="patient : ${patients}">
+    <li>
+        <span th:text="${patient.name}">no procedures</span>
+        <span th:text="${patient.surname}">no medicines</span>
+        <span th:text="${patient.age}">no operations</span>
+    </li>
+</ul>
+<a th:href="@{/patient}"><= Back</a>
+</body>
+</html>
