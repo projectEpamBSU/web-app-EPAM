@@ -35,8 +35,9 @@ public class Doctor implements Serializable {
     }
 
     public String showProfile() {
-        return name + " " + surname + ", " + age;
+        return "Name: " + name + '\n' + "Surname: " + surname + '\n' + "Age: " + age + '\n' + "Department: " + department + '\n' + "Login: " + login + '\n';
     }
+
 
     public int getId() {
         return id;
